@@ -19,7 +19,7 @@ En förbättring blir två.
 Två blir fem.  
 Fem blir ett helt nytt epic.
 
-Innan Charlie hinner protestera är skogen full av blockerare, sidospår och teknisk skuld. Vägen till puben, som nyss var enkel och rak, har förvandlats till en labyrint av Feature Creep™.
+Innan Charlie hinner protestera är vägen full av blockerare, sidospår och teknisk skuld. Vägen till puben, som nyss var enkel och rak, har förvandlats till en labyrint av Feature Creep™.
 
 Nu är det er tur att hjälpa Charlie.
 
