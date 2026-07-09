@@ -106,7 +106,7 @@ class Program
             }
         }
 
-        // Charlie måste sluta på puben
+        // Om true så är Charlie på puben
         return map[y][x] == 'Z';
     }
 }
