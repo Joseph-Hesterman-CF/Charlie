@@ -29,7 +29,7 @@ Hitta den **enda** framkomliga vägen genom kaoset och ge Charlie instruktionern
 
 ## Förutsättningar
 
-För att bygga och köra projektet behöver du ha .NET 10 installerat.
+Innan du bygger och kör projektet behöver du ha .NET 10 installerat.
 
 ## Regler
 
