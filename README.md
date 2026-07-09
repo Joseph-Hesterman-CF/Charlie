@@ -27,12 +27,16 @@ Hitta den **enda** framkomliga vägen genom kaoset och ge Charlie instruktionern
 
 ---
 
+## Förutsättningar
+
+För att bygga och köra projektet behöver du ha .NET 10 installerat.
+
 ## Regler
 
 | Symbol | Betydelse |
 |--------|-----------|
-| 🦊 `A` | Charlie (start) |
-| 🍺 `Z` | Puben (mål) |
+| `A` | Charlie (start) |
+| `Z` | Puben (mål) |
 | `.` | Framkomlig väg |
 | `#` | Feature creep (blockerad väg) |
 
