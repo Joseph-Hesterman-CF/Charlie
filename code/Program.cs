@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
+namespace Charlie;
 
 class Program
 {
     static void Main()
     {
         string[] map =
-        {
+        [
             "#########################",
             "#A..#...#.....#.....#...#",
             "###.#.#.###.###.#.#.###.#",
@@ -32,7 +31,7 @@ class Program
             "#.#######.#########.#####",
             "#.......#..............Z#",
             "#########################"
-        };
+        ];
 
         var answer = Solve(map);
 
@@ -41,7 +40,7 @@ class Program
 
         Console.WriteLine(Validate(map, answer)
             ? "Charlie är framme vid puben!"
-            : "Charlie gick vilse i Feature Creep™");
+            : "Charlie gick vilse!");
     }
 
 
@@ -54,13 +53,13 @@ class Program
 
     static bool Validate(string[] map, string path)
     {
-        int x = 0;
-        int y = 0;
+        var x = 0;
+        var y = 0;
 
         // Hitta startpositionen A
-        for (int row = 0; row < map.Length; row++)
+        for (var row = 0; row < map.Length; row++)
         {
-            for (int col = 0; col < map[row].Length; col++)
+            for (var col = 0; col < map[row].Length; col++)
             {
                 if (map[row][col] == 'A')
                 {
@@ -70,7 +69,7 @@ class Program
             }
         }
 
-        foreach (char move in path)
+        foreach (var move in path)
         {
             switch (move)
             {
@@ -95,10 +94,7 @@ class Program
             }
 
             // Kontrollera att Charlie håller sig på kartan
-            if (y < 0 ||
-                y >= map.Length ||
-                x < 0 ||
-                x >= map[y].Length)
+            if (y < 0 || y >= map.Length || x < 0 || x >= map[y].Length)
             {
                 return false;
             }
