@@ -10,20 +10,18 @@ Produktägaren springer in.
 
 > *"Vänta! Innan du går... jag har bara en sista liten sak."*
 
-Charlie suckar.
+Charlie suckar och produktägaren fortsätter:
 
-> *"Det är inte en feature. Det är mer en... förbättring. "*
-
+> *"Det är inte en feature. Jag lovar! Det är en liten förbättring."*
 
 En förbättring blir två.  
-Två blir fem.  
-Fem blir ett helt nytt epic.
+Två blir tre.
 
-Innan Charlie hinner protestera är vägen full av blockerare, sidospår och teknisk skuld. Vägen till puben, som nyss var enkel och rak, har förvandlats till en labyrint av Feature Creep™.
+Innan Charlie hinner protestera är vägen full av blockerare, sidospår och teknisk skuld. Vägen till puben, som nyss var enkel och rak, har förvandlats till en labyrint av Feature Creep.
 
 Nu är det er tur att hjälpa Charlie.
 
-Hitta den **enda** framkomliga vägen genom kaoset och ge Charlie instruktionerna han behöver för att ta sig till puben innan ännu en "liten ändring" dyker upp.
+Hitta den **enda** framkomliga vägen genom kaoset och ge Charlie instruktionerna han behöver för att ta sig ur feature creep hell.
 
 ---
 
