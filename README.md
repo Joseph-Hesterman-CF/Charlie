@@ -23,11 +23,38 @@ Nu är det er tur att hjälpa Charlie.
 
 Hitta den **enda** framkomliga vägen genom kaoset och ge Charlie instruktionerna han behöver för att ta sig ur feature creep hell.
 
----
+## Er uppgift
+
+Nu behöver Charlie er hjälp.
+
+Ni får en karta över skogen. På kartan finns en startpunkt, en pub och en mängd hinder.
+
+Er uppgift är att hitta den enda framkomliga vägen från Charlie till puben och beskriva vägen med en sekvens av rörelseinstruktioner.
+
+Charlie får endast röra sig en ruta åt gången och får bara använda följande instruktioner:
+
+* `U` – upp
+* `D` – ner
+* `L` – vänster
+* `R` – höger
+
+### Exempel
+
+En sekvens av instruktioner kan se ut så här:
+
+```text
+RRDDUL
+```
+
+## Målet
+
+Hitta en väg från `A` till `Z` utan att gå genom blockerade rutor.
+
+När ni har hittat vägen ska ni ge Charlie den kompletta sekvensen av instruktioner så att han kan ta sig hela vägen till puben.
 
 ## Förutsättningar
 
-Innan du bygger och kör projektet behöver du ha .NET 10 installerat.
+Innan ni bygger och kör projektet behöver ni ha .NET 10 installerat.
 
 ## Regler
 
@@ -38,16 +65,4 @@ Innan du bygger och kör projektet behöver du ha .NET 10 installerat.
 | `.` | Framkomlig väg |
 | `#` | Feature creep (blockerad väg) |
 
-### Charlie får endast röra sig
-
-| Kod | Rörelse |
-|-----|---------|
-| `U` | Upp |
-| `D` | Ner |
-| `L` | Vänster |
-| `R` | Höger |
-
-Exempel:
-
-```text
-RRDDUL
+Charlie får inte gå genom `#` och får inte lämna kartan.

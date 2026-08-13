@@ -46,7 +46,8 @@ class Program
 
     static string Solve(string[] map)
     {
-        // TODO: Implementera lösningen här.
+        // Implementera Solve så att den returnerar en sträng 
+        // bestående av instruktioner U, D, L och R som tar Charlie från A till Z.
         return string.Empty;
     }
 
@@ -56,7 +57,6 @@ class Program
         var x = 0;
         var y = 0;
 
-        // Hitta startpositionen A
         for (var row = 0; row < map.Length; row++)
         {
             for (var col = 0; col < map[row].Length; col++)
@@ -69,7 +69,7 @@ class Program
             }
         }
 
-        foreach (var move in path)
+        foreach (char move in path)
         {
             switch (move)
             {
@@ -93,20 +93,17 @@ class Program
                     return false;
             }
 
-            // Kontrollera att Charlie håller sig på kartan
             if (y < 0 || y >= map.Length || x < 0 || x >= map[y].Length)
             {
                 return false;
             }
 
-            // Kontrollera Feature Creep-blockeringar
             if (map[y][x] == '#')
             {
                 return false;
             }
         }
 
-        // Om true så är Charlie på puben
         return map[y][x] == 'Z';
     }
 }
