@@ -21,7 +21,7 @@ Innan Charlie hinner protestera är vägen full av blockerare, sidospår och tek
 
 Nu är det er tur att hjälpa Charlie.
 
-Hitta den **enda** framkomliga vägen genom kaoset och ge Charlie instruktionerna han behöver för att ta sig ur feature creep hell.
+Hitta den snabbaste framkomliga vägen genom kaoset och ge Charlie instruktionerna han behöver för att ta sig ur feature creep hell.
 
 ## Er uppgift
 
@@ -66,3 +66,10 @@ Innan ni bygger och kör projektet behöver ni ha .NET 10 installerat.
 | `#` | Feature creep (blockerad väg) |
 
 Charlie får inte gå genom `#` och får inte lämna kartan.
+
+## Bedömning
+
+- Fungerande lösning: 5 poäng
+- Kreativitet: 0 – 5 poäng
+- Samarbete: 0 – 5 poäng
+- Hemlig bonus: 5 poäng

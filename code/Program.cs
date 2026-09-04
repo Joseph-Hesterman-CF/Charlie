@@ -17,7 +17,7 @@ class Program
             "#.#.###.#########.#####.#",
             "#.#...#.....#...#.....#.#",
             "#####.#####.#.#.#####.#.#",
-            "#.....#...#.#.#.....#.#.#",
+            "#.....#...#...#.....#.#.#",
             "#.#####.#.###.###.###.#.#",
             "#.#...#.#...#.#.#.....#.#",
             "#.#.#.#.###.#.#.#######.#",
@@ -33,77 +33,90 @@ class Program
             "#########################"
         ];
 
-        var answer = Solve(map);
+        var path = Solve(map);
 
-        Console.WriteLine("Charlies väg till puben:");
-        Console.WriteLine(answer);
-
-        Console.WriteLine(Validate(map, answer)
+        Console.WriteLine(TryValidate(map, path, out var error)
             ? "Charlie är framme vid puben!"
-            : "Charlie gick vilse!");
+            : $"Charlie gick vilse: {error}");
     }
-
 
     static string Solve(string[] map)
     {
-        // Implementera Solve så att den returnerar en sträng 
+        // Implementera Solve så att den returnerar en string path 
         // bestående av instruktioner U, D, L och R som tar Charlie från A till Z.
+        // Example: "RRDDLLUU" betyder att Charlie ska gå höger, höger, ner, ner, vänster, vänster, upp, upp.
+        
         return string.Empty;
     }
 
-
-    static bool Validate(string[] map, string path)
+    static bool TryValidate(string[] map, string path, out string error)
     {
-        var x = 0;
-        var y = 0;
+        error = string.Empty;
 
-        for (var row = 0; row < map.Length; row++)
+        var start = FindPosition(map, 'A');
+        if (start is null)
         {
-            for (var col = 0; col < map[row].Length; col++)
-            {
-                if (map[row][col] == 'A')
-                {
-                    x = col;
-                    y = row;
-                }
-            }
+            error = "Kartan saknar startpunkten A.";
+            return false;
         }
 
-        foreach (char move in path)
+        var (x, y) = start.Value;
+
+        for (var step = 0; step < path.Length; step++)
         {
-            switch (move)
+            var move = path[step];
+            (int dx, int dy)? direction = move switch
             {
-                case 'U':
-                    y--;
-                    break;
+                'U' => (0, -1),
+                'D' => (0, 1),
+                'L' => (-1, 0),
+                'R' => (1, 0),
+                _ => null
+            };
 
-                case 'D':
-                    y++;
-                    break;
-
-                case 'L':
-                    x--;
-                    break;
-
-                case 'R':
-                    x++;
-                    break;
-
-                default:
-                    return false;
+            if (direction is null)
+            {
+                error = $"Ogiltig instruktion '{move}' på steg {step + 1}.";
+                return false;
             }
+
+            var (dx, dy) = direction.Value;
+            x += dx;
+            y += dy;
 
             if (y < 0 || y >= map.Length || x < 0 || x >= map[y].Length)
             {
+                error = $"Charlie lämnar kartan på steg {step + 1}.";
                 return false;
             }
 
             if (map[y][x] == '#')
             {
+                error = $"Charlie går in i en vägg på steg {step + 1}.";
                 return false;
             }
         }
 
-        return map[y][x] == 'Z';
+        if (map[y][x] != 'Z')
+        {
+            error = "Vägen slutar inte vid Z.";
+            return false;
+        }
+
+        return true;
+    }
+
+    static (int x, int y)? FindPosition(string[] map, char marker)
+    {
+        for (var y = 0; y < map.Length; y++)
+        {
+            var x = map[y].IndexOf(marker);
+            if (x >= 0)
+            {
+                return (x, y);
+            }
+        }
+
+        return null;
     }
 }
