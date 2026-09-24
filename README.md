@@ -55,6 +55,7 @@ När ni har hittat vägen ska ni ge Charlie den kompletta sekvensen av instrukti
 ## Förutsättningar
 
 Innan ni bygger och kör projektet behöver ni ha .NET 10 installerat.
+https://dotnet.microsoft.com/en-us/download/dotnet/10.0
 
 ## Regler
 
